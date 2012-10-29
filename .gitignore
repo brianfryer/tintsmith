@@ -7,4 +7,4 @@ vendor/gems/*
 .sass-cache/*
 .idea/*
 public/admin/stylesheets/themes/*
-!public/admin/stylesheets/themes/default/*
+!public/admin/stylesheets/themes/default
