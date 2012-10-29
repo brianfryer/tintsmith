@@ -1,0 +1,29 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:palettes, :index)
+      %li=link_to pat(:new), url(:palettes, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:palettes)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:palette, :id)
+          %th=mat(:palette, :created_at)
+          %th=mat(:palette, :updated_at)
+          %th.last="&nbsp;"
+        -@palettes.each do |palette|
+          %tr
+            %td.first=palette.id
+            %td=palette.created_at
+            %td=palette.updated_at
+            %td.last
+              =button_to pat(:edit), url(:palettes, :edit, :id => palette.id), :method => :get, :class => :button_to
+              ="|"
+              =button_to pat(:delete), url(:palettes, :destroy, :id => palette.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')"
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")
