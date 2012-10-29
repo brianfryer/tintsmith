@@ -6,3 +6,5 @@ vendor/gems/*
 !vendor/gems/cache/
 .sass-cache/*
 .idea/*
+public/admin/stylesheets/themes/*
+!public/admin/stylesheets/themes/default/*
